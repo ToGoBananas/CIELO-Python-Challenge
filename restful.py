@@ -5,6 +5,7 @@ import demjson
 import re
 import pprint
 import os
+import sys
 import csv
 
 from termcolor import colored
@@ -45,16 +46,16 @@ class Console:
 
     @staticmethod
     def print_error(error_message):
-        print(colored('ERROR:', 'red') + ' ' + error_message)
+        sys.stdout.write(colored('ERROR:', 'red') + ' ' + error_message + '\n')
 
     @staticmethod
     def print_success(success_message):
-        print(colored('SUCCESS:', 'green') + ' ' + success_message)
+        sys.stdout.write(colored('SUCCESS:', 'green') + ' ' + success_message + '\n')
 
     @staticmethod
     def print_response(response_data):
         formatted_data = pprint.pformat(response_data, indent=4)
-        print(formatted_data)
+        sys.stdout.write(formatted_data + '\n')
 
 
 class FilesStorage:
