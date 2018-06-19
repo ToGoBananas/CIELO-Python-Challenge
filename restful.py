@@ -107,7 +107,6 @@ if __name__ == "__main__":
 
         if status_code < 200 or status_code >= 300:
             Console.print_error('Http response status code: {0}.'.format(status_code))
-            exit(1)
         else:
             Console.print_success('Http response status code: {0}.'.format(status_code))
             response_json = response.json()
